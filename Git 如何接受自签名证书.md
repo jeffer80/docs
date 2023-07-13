@@ -11,8 +11,8 @@ git --insecure clone https://example.com/repo.git
 #### 使用配置文件
 除了通过命令行选项，我们还可以通过 Git 配置文件来让 Git 接受自签名证书。Git 配置文件为 ~/.gitconfig。在该文件中，我们可以添加以下配置来告知 Git 信任自签名证书：
 ```
-[http]
-    sslCAInfo = /path/to/cert.pem
+[http "https://git.domain.com"]
+    sslCAInfo = /path/to/ca.pem
 ```
 在上面的示例中，我们指定了证书文件的路径为 /path/to/cert.pem。将该配置添加到 ~/.gitconfig 文件中后，Git 将会在使用 HTTPS 连接时使用该证书作为信任根证书。请确保将实际证书的路径替换为正确的路径。
 
